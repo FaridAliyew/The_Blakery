@@ -19,7 +19,7 @@ function FeaturedCollections() {
           </video>
         </div>
 
-        <div className="w-lvw px-6 lg:w-4/9 lg:px-0 flex flex-col gap-6">
+        <div className="w-full md:w-[600px] lg:w-4/9 lg:px-0 flex flex-col gap-6">
           <div className="build-box bg-[#383737] border-2 border-gray-100 p-6 rounded-2xl w-full h-full flex justify-center items-center text-center">
             <div style={{ textShadow: "4px 4px 6px rgba(0,0,0,0.6)" }}>
               <h1 className="text-2xl uppercase">ALL YOUR FAVORITES</h1>
