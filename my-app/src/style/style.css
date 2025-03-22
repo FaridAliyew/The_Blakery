@@ -112,16 +112,17 @@ section .add-to-cart {
     }
 }
 
-.pack {
+.animation {
     width: 100%;
     overflow: hidden;
     background: #2d2c2c;
     color: #fff;
     padding: 1rem 0;
     white-space: nowrap;
+    font-family: "Itim", cursive;
 }
 
-.pack:hover .marquee {
+.animation:hover .marquee {
     animation-play-state: paused;
 }
 
@@ -153,5 +154,11 @@ section .add-to-cart {
 
     to {
         transform: translateX(-50%);
+    }
+}
+
+.pack{
+    p{
+        font-family: "Itim", cursive;  
     }
 }

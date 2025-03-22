@@ -71,8 +71,7 @@ function Products() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const previewSize =
-        windowSize.width < 640 ? 200 : windowSize.width < 1024 ? 220 : 260;
+    const previewSize = windowSize.width < 640 ? 200 : windowSize.width < 1024 ? 220 : 260;
 
     const handleMouseEnter = (productTitle) => {
         const newImage = productImages[productTitle];
@@ -129,7 +128,8 @@ function Products() {
                                 {product.stars.map((size, sIdx) => (
                                     <PiStarFourFill
                                         key={sIdx}
-                                        className={`text-[${size}px] ${sIdx % 2 === 1 ? "mx-6" : ""}`}
+                                        className={`${sIdx % 2 === 1 ? "mx-6" : ""}`}
+                                        style={{ fontSize: `${size}px` }}
                                     />
                                 ))}
                             </div>
