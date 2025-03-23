@@ -7,6 +7,7 @@ import './style/style.css'
 import Pack from './components/Pack'
 import Carusel from './components/Carusel'
 import PressMentions from './components/PressMentions'
+import ProductShowcase from './components/ProductShowcase'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Pack/>
       <Carusel/>
       <PressMentions/>
+      <ProductShowcase/>
     </>
   )
 }
