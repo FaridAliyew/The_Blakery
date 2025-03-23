@@ -7,7 +7,6 @@ import img4 from '../images/variety.png'
 function ProductShowcase() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-3 px-4 md:px-8 gap-4 mt-10">
-      {/* 1. COOKIE KING */}
       <div className="relative group h-96 w-full overflow-hidden rounded-3xl border-2 border-white">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 "
@@ -27,7 +26,6 @@ function ProductShowcase() {
         </div>
       </div>
 
-      {/* 2. SHAMROCKED */}
       <div className="relative group h-96 w-full overflow-hidden rounded-3xl border-2 border-white">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
@@ -47,7 +45,6 @@ function ProductShowcase() {
         </div>
       </div>
 
-      {/* 3. CUSTOMIZE */}
       <div className="relative group h-96 w-full overflow-hidden rounded-3xl border-2 border-white">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
@@ -67,7 +64,6 @@ function ProductShowcase() {
         </div>
       </div>
 
-      {/* 4. VARIETY */}
       <div className="relative group h-96 w-full overflow-hidden rounded-3xl border-2 border-white">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
