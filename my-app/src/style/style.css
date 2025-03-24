@@ -129,7 +129,7 @@ section .add-to-cart {
 .marquee {
     display: flex;
     width: 265%;
-    animation: marquee 25s linear infinite;
+    animation: marquee 22s linear infinite;
     white-space: nowrap;
 }
 
@@ -157,8 +157,46 @@ section .add-to-cart {
     }
 }
 
-.pack{
-    p{
-        font-family: "Itim", cursive;  
+.pack {
+    p {
+        font-family: "Itim", cursive;
     }
+}
+
+.animationThree {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+    white-space: nowrap;
+
+    .marquee3 {
+        display: flex;
+        width: 200%;
+        animation: marquee3 20s linear infinite;
+        white-space: nowrap;
+
+        .marquee-group {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+        }
+
+        .marquee-item {
+            margin: 0 10px;
+        }
+    }
+}
+
+@keyframes marquee3 {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animationThree:hover .marquee3 {
+    animation-play-state: paused;
 }

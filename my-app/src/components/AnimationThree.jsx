@@ -1,0 +1,34 @@
+import React from 'react'
+import img1 from '../images/cookies.png'
+import img2 from '../images/customize.png'
+import img3 from '../images/variety.png'
+
+function AnimationThree() {
+    const marqueeText = (
+        <>
+            <div className="marquee-item">
+                <img className="w-96 h-96 object-cover rounded-3xl" src={img1} alt="" />
+            </div>
+            <div className="marquee-item">
+                <img className="w-96  h-96 object-cover rounded-3xl" src={img2} alt="" />
+            </div>
+            <div className="marquee-item">
+                <img className="w-96 h-96 object-cover rounded-3xl" src={img3} alt="" />
+            </div>
+            <div className="marquee-item">
+                <img className="w-96 h-96 object-cover rounded-3xl" src={img2} alt="" />
+            </div>
+        </>
+    )
+
+    return (
+        <section className="animationThree">
+            <div className="marquee3">
+                <div className="marquee-group">{marqueeText}</div>
+                <div className="marquee-group">{marqueeText}</div>
+            </div>
+        </section>
+    )
+}
+
+export default AnimationThree
