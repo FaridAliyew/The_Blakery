@@ -16,7 +16,7 @@ function CateringSection() {
                 The Blakery Caters
             </h1>
             <button
-                className="border-2 text-[20px] border-white w-1/5 h-13 rounded-[8px] hover:bg-white hover:text-black cursor-pointer"
+                className="border-2 text-[14px] md:text-[19px] border-white w-30 md:w-1/5 h-13 rounded-[8px] hover:bg-white hover:text-black cursor-pointer"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
             >
                 CATERING MENU

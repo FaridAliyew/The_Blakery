@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router";
 import FeaturedCollections from './components/FeaturedCollections'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
@@ -12,24 +13,38 @@ import CateringSection from './components/CateringSection'
 import AnimationTwo from './components/AnimationTwo'
 import AnimationThree from './components/AnimationThree'
 import Footer from './components/Footer'
+import BuildAbox from "./pages/BuildAbox";
+
 
 function App() {
 
   return (
     <>
-      <Header/>
-      <Navbar/>
-      <FeaturedCollections/>
-      <Products/>
-      <Animation/>
-      <Pack/>
-      <Carusel/>
-      <PressMentions/>
-      <ProductShowcase/>
-      <CateringSection/>
-      <AnimationTwo/>
-      <AnimationThree/>
-      <Footer/>
+      <Header />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <FeaturedCollections />
+            <Products />
+            <Animation />
+            <Pack />
+            <Carusel />
+            <PressMentions />
+            <ProductShowcase />
+            <CateringSection />
+            <AnimationTwo />
+            <AnimationThree />
+            <Footer />
+          </>
+        } />
+
+        <Route path="build" element={<BuildAbox />} />
+
+
+
+
+      </Routes>
     </>
   )
 }

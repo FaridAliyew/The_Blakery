@@ -2,6 +2,7 @@ import React from 'react';
 import video from '../assets/mainVideo.mp4';
 import img1 from '../images/main-img1.png';
 import img2 from '../images/main-img2.png';
+import { Link } from "react-router";
 
 function FeaturedCollections() {
   return (
@@ -24,9 +25,9 @@ function FeaturedCollections() {
             <div style={{ textShadow: "4px 4px 6px rgba(0,0,0,0.6)" }}>
               <h1 className="text-2xl uppercase">ALL YOUR FAVORITES</h1>
               <p className="text-5xl mt-2">BUILD A BOX</p>
-              <button className="w-60 h-12 mt-4 px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">
+              <Link to='build' className="block ms-auto me-auto w-60 h-12 mt-4 px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-black cursor-pointer transition ">
                 SHOP NOW
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -40,7 +41,7 @@ function FeaturedCollections() {
               <h1 className="text-2xl uppercase">6 LIMITED FLAVORS</h1>
               <p className="text-5xl mt-2">THE GOLDEN</p>
               <p className="text-5xl mt-4">COLLECTION</p>
-              <button className="mt-4 w-60 h-12 px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">
+              <button className="mt-4 w-60 h-12 group-hover:bg-gray-800 group-hover:text-white px-6 py-2 border border-white rounded-lg transition cursor-pointer">
                 ORDER NOW
               </button>
             </div>
@@ -54,7 +55,7 @@ function FeaturedCollections() {
             <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 group-hover:opacity-0 rounded-2xl"></div>
             <div className="relative z-10" style={{ textShadow: "4px 4px 6px rgba(0,0,0,0.6)" }}>
               <p className="text-5xl uppercase">VARIETY PACK</p>
-              <button className="w-60 h-12 mt-4 px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">
+              <button className="w-60 group-hover:bg-gray-800 group-hover:text-white h-12 mt-4 px-6 py-2 border border-white rounded-lg transition cursor-pointer">
                 ADD TO CART
               </button>
             </div>

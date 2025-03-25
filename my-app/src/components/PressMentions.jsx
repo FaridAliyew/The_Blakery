@@ -5,8 +5,8 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 function PressMentions() {
-  const supabaseUrl = 'https://xnykiejhjsppxvnmqcev.supabase.co'
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhueWtpZWpoanNwcHh2bm1xY2V2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjMyODk0NDcsImV4cCI6MjAzODg2NTQ0N30.GTpLwlyahu9lMtSdKkCX4C9PtcT_7rvZPRCPYdkP1NY'
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL2;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_KEY2;
   const supabase = createClient(supabaseUrl, supabaseKey)
 
   const [pressItems, setPressItems] = useState([])
@@ -28,14 +28,14 @@ function PressMentions() {
   }, [])
 
   const settings = {
-    dots: false,           
-    arrows: false,         
+    dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,       
-    autoplaySpeed: 3000,   
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
