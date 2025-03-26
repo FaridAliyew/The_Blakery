@@ -14,6 +14,8 @@ import AnimationTwo from './components/AnimationTwo'
 import AnimationThree from './components/AnimationThree'
 import Footer from './components/Footer'
 import BuildAbox from "./pages/BuildAbox";
+import AddToCart from "./pages/AddToCart";
+import CheckOut from "./pages/CheckOut";
 
 
 function App() {
@@ -40,6 +42,19 @@ function App() {
         } />
 
         <Route path="build" element={<BuildAbox />} />
+        <Route path="addTocart" element={
+          <>
+            <AddToCart />
+            <Footer />
+          </>
+        } />
+        
+        <Route path="checkOut" element={
+          <>
+            <CheckOut/>
+            <Footer/>
+          </>
+        }/>
 
 
 

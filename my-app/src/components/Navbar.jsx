@@ -1,22 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars, FaShoppingCart } from 'react-icons/fa';
 import { Link } from "react-router";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [cartCount, setCartCount] = useState(0);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    useEffect(() => {
+        const updateCartCount = () => {
+            const cartString = localStorage.getItem('myCart');
+            const cartArray = cartString ? JSON.parse(cartString) : [];
+            setCartCount(cartArray.length);
+        };
+
+        updateCartCount();
+        const interval = setInterval(updateCartCount, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <nav className="navbar">
             <div className="navbar-left">
-                <FaBars className="burger-icon text-white border-2 p-1 rounded-full" onClick={toggleMenu} />
+                <FaBars
+                    className="burger-icon text-white border-2 p-1 rounded-full"
+                    onClick={toggleMenu}
+                />
             </div>
 
             <div className="navbar-center">
-                <Link to='/'>
+                <Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 73" fill="none" style={{
                         width: '190px',
                         marginTop: '30px',
@@ -32,19 +48,26 @@ function Navbar() {
                 </Link>
             </div>
 
-            <div className="navbar-right">
-                <FaShoppingCart className="cart-icon text-white" />
+            <div className="navbar-right relative">
+                <Link to="/addTocart">
+                    <FaShoppingCart className="cart-icon text-white" />
+                    {cartCount > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+                            {cartCount}
+                        </span>
+                    )}
+                </Link>
             </div>
 
             <div className={`side-menu ${isOpen ? 'open' : ''} text-white uppercase text-3xl flex flex-col px-5`}>
-                <Link to='build'>Build a Box</Link>
-                <Link className='my-5' to='cookie'>Cookie Catalogue</Link>
-                <Link to='custom'>Custom Requests</Link>
-                <Link className='my-5' to='catering'>Catering</Link>
-                <Link to='gift'>Gift Cards</Link>
-                <Link className='my-5' to='our'>Our Story</Link>
-                <Link to='contact'>Contact Us</Link>
-                <Link className='mt-5' to='faq'>FAQ</Link>
+                <Link to="build">Build a Box</Link>
+                <Link className="my-5" to="cookie">Cookie Catalogue</Link>
+                <Link to="custom">Custom Requests</Link>
+                <Link className="my-5" to="catering">Catering</Link>
+                <Link to="gift">Gift Cards</Link>
+                <Link className="my-5" to="our">Our Story</Link>
+                <Link to="contact">Contact Us</Link>
+                <Link className="mt-5" to="faq">FAQ</Link>
             </div>
 
             {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
@@ -53,3 +76,6 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
