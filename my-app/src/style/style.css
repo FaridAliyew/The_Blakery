@@ -200,3 +200,14 @@ section .add-to-cart {
 .animationThree:hover .marquee3 {
     animation-play-state: paused;
 }
+
+.golden-collection {
+    .slick-white-dots .slick-dots li button:before {
+        font-size: 0.9rem;
+        color: #fff !important;
+    }
+
+    .slick-white-dots .slick-dots li.slick-active button:before {
+        color: #fff !important;
+    }
+}

@@ -31,7 +31,7 @@ function FeaturedCollections() {
             </div>
           </div>
 
-          <div className="order-now relative overflow-hidden group hidden lg:flex border-2 border-gray-100 p-6 rounded-2xl w-full h-full text-center justify-center items-center">
+          <div className="cursor-pointer order-now relative overflow-hidden group hidden lg:flex border-2 border-gray-100 p-6 rounded-2xl w-full h-full text-center justify-center items-center">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 transform group-hover:scale-110"
               style={{ backgroundImage: `url(${img2})` }}
@@ -41,9 +41,9 @@ function FeaturedCollections() {
               <h1 className="text-2xl uppercase">6 LIMITED FLAVORS</h1>
               <p className="text-5xl mt-2">THE GOLDEN</p>
               <p className="text-5xl mt-4">COLLECTION</p>
-              <button className="mt-4 w-60 h-12 group-hover:bg-gray-800 group-hover:text-white px-6 py-2 border border-white rounded-lg transition cursor-pointer">
+              <Link to='goldenCollection' className="block ms-auto me-auto mt-4 w-60 h-12 group-hover:bg-gray-800 group-hover:text-white px-6 py-2 border border-white rounded-lg transition cursor-pointer">
                 ORDER NOW
-              </button>
+              </Link>
             </div>
           </div>
 

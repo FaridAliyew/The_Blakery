@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import BuildAbox from "./pages/BuildAbox";
 import AddToCart from "./pages/AddToCart";
 import CheckOut from "./pages/CheckOut";
+import GoldenCollection from "./pages/GoldenCollection";
 
 
 function App() {
@@ -52,6 +53,14 @@ function App() {
         <Route path="checkOut" element={
           <>
             <CheckOut/>
+            <Footer/>
+          </>
+        }/>
+
+        <Route path="goldenCollection" element={
+          <>
+            <GoldenCollection/>
+            <AnimationThree/>
             <Footer/>
           </>
         }/>
