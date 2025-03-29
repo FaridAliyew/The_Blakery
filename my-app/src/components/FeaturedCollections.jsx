@@ -47,7 +47,7 @@ function FeaturedCollections() {
             </div>
           </div>
 
-          <div className="add-to-cart relative overflow-hidden group hidden lg:flex border-2 border-gray-100 p-6 rounded-2xl w-full h-full text-center justify-center items-center">
+          <div className="add-to-cart cursor-pointer relative overflow-hidden group hidden lg:flex border-2 border-gray-100 p-6 rounded-2xl w-full h-full text-center justify-center items-center">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 transform group-hover:scale-110"
               style={{ backgroundImage: `url(${img1})` }}
@@ -55,12 +55,11 @@ function FeaturedCollections() {
             <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 group-hover:opacity-0 rounded-2xl"></div>
             <div className="relative z-10" style={{ textShadow: "4px 4px 6px rgba(0,0,0,0.6)" }}>
               <p className="text-5xl uppercase">VARIETY PACK</p>
-              <button className="w-60 group-hover:bg-gray-800 group-hover:text-white h-12 mt-4 px-6 py-2 border border-white rounded-lg transition cursor-pointer">
+              <Link to='varietyPack' className="w-60 block ms-auto me-auto group-hover:bg-gray-800 group-hover:text-white h-12 mt-4 px-6 py-2 border border-white rounded-lg transition cursor-pointer">
                 ADD TO CART
-              </button>
+              </Link>
             </div>
           </div>
-
         </div>
       </div>
     </section>

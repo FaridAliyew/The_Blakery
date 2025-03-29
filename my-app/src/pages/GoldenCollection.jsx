@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import { FaStar } from 'react-icons/fa'; 
+import { PiStarFourFill } from "react-icons/pi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import img1 from '../images/main-img2.png';
 import img2 from '../images/the-golden.png';
 import img3 from '../images/shamrocked.png';
@@ -23,13 +24,27 @@ function GoldenCollection() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,    
-    arrows: false, 
+    dots: true,
+    arrows: false,
     autoplay: false,
   };
 
   const handlePackClick = (packNumber) => {
     setSelectedPack(packNumber);
+  };
+
+  const handleAddToCart = () => {
+    let cart = localStorage.getItem('myCart');
+    if (cart) {
+      cart = JSON.parse(cart);
+    } else {
+      cart = [];
+    }
+    cart.push({
+      packSize: selectedPack, 
+      counts: { 4: 1 },       
+    });
+    localStorage.setItem('myCart', JSON.stringify(cart));
   };
 
   return (
@@ -53,17 +68,18 @@ function GoldenCollection() {
           </Slider>
         </div>
 
+
         <div className="p-6 rounded shadow-sm flex flex-col justify-between">
           <div>
             <h1 className="text-white text-3xl font-bold uppercase mb-2">
               The Golden Collection
             </h1>
-            <div className="flex items-center space-x-1 text-yellow-500 mb-4">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
+            <div className="flex items-center space-x-2 text-white mb-4">
+              <PiStarFourFill />
+              <PiStarFourFill />
+              <PiStarFourFill />
+              <PiStarFourFill />
+              <PiStarFourFill />
             </div>
             <div className="flex items-center space-x-2 mb-4">
               <p className="text-xl font-semibold text-white">
@@ -76,36 +92,61 @@ function GoldenCollection() {
               )}
             </div>
 
+
             <div className="text-white mt-10">
               <h1 className="font-bold mb-3">Shamrocked</h1>
-              <p>Chocolate dough with crunchy pistachios, stuffed with smooth pistachio creme. Rich, nutty, and dangerously delicious—it’ll leave you feeling shamrocked.</p>
+              <p>
+                Chocolate dough with crunchy pistachios, stuffed with smooth pistachio creme.
+                Rich, nutty, and dangerously delicious—it’ll leave you feeling shamrocked.
+              </p>
 
               <h1 className="font-bold my-3">Rainbow Road</h1>
-              <p>Take a ride on the wild side with this cosmic brownie cookie. A double chocolate cookie stuffed with hot fudge and topped with playful rainbow chips, it’s a sweet journey you’ll never want to end. Warning: One bite might just lead to a craving that’s out of this world.</p>
+              <p>
+                Take a ride on the wild side with this cosmic brownie cookie. A double chocolate
+                cookie stuffed with hot fudge and topped with playful rainbow chips, it’s a sweet
+                journey you’ll never want to end. Warning: One bite might just lead to a craving
+                that’s out of this world.
+              </p>
 
               <h1 className="font-bold my-3">Gold Digger</h1>
-              <p>Crunchy pretzels, toffee, and caramel Belgian chocolate all stuffed with gooey caramel and topped with flaky sea salt. For those who know how to dig for treasure… and pleasure.</p>
+              <p>
+                Crunchy pretzels, toffee, and caramel Belgian chocolate all stuffed with gooey caramel
+                and topped with flaky sea salt. For those who know how to dig for treasure… and pleasure.
+              </p>
 
               <h1 className="font-bold my-3">Mint To Be</h1>
-              <p>This cookie was mint for you. Packed with crunchy Mint Oreos, melty white chocolate chips, and a sinful mix of semi-sweet and bittersweet chocolate chips, every bite is a decadent explosion of chocolatey minty goodness. But it doesn’t stop there—it’s stuffed with a creamy Mint Oreo buttercream frosting that’ll have you falling head over heels. One bite, and you’ll know it was always Mint to Be.</p>
+              <p>
+                This cookie was mint for you. Packed with crunchy Mint Oreos, melty white chocolate chips,
+                and a sinful mix of semi-sweet and bittersweet chocolate chips, every bite is a decadent
+                explosion of chocolatey minty goodness. But it doesn’t stop there—it’s stuffed with a creamy
+                Mint Oreo buttercream frosting that’ll have you falling head over heels. One bite, and you’ll
+                know it was always Mint to Be.
+              </p>
 
               <h1 className="font-bold my-3">Cookie King</h1>
-              <p>Inspired by the King Cake, a Snickerdoodle dough with coffee cake pieces, stuffed with rich cream cheese frosting. A sweet, royal indulgence worthy of the cookie crown.</p>
+              <p>
+                Inspired by the King Cake, a Snickerdoodle dough with coffee cake pieces, stuffed with
+                rich cream cheese frosting. A sweet, royal indulgence worthy of the cookie crown.
+              </p>
 
               <h1 className="font-bold mt-3">Get Lucky</h1>
-              <p>Lucky Charms cereal-infused dough with gooey marshmallow fluff, topped with a Lucky Charms Krispie treat. So magically delicious, it’ll have you feeling lucky all night long.</p>
+              <p>
+                Lucky Charms cereal-infused dough with gooey marshmallow fluff, topped with a Lucky Charms
+                Krispie treat. So magically delicious, it’ll have you feeling lucky all night long.
+              </p>
             </div>
           </div>
+
 
           <div className="mt-4">
             <div className="flex space-x-4 mb-4">
               <button
                 onClick={() => handlePackClick(6)}
                 className={`
-                  border-2 px-4 py-2 rounded transition
+                  border-2 px-4 py-2 rounded cursor-pointer w-64 h-12 transition
                   ${selectedPack === 6
-                    ? 'border-black bg-black text-white'
-                    : 'border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white'
+                    ? 'bg-white text-black'
+                    : 'border-white text-white hover:bg-[#555] hover:text-white'
                   }
                 `}
               >
@@ -114,17 +155,20 @@ function GoldenCollection() {
               <button
                 onClick={() => handlePackClick(12)}
                 className={`
-                  border-2 px-4 py-2 rounded transition
+                  border-2 px-4 py-2 w-64 h-12 rounded cursor-pointer transition
                   ${selectedPack === 12
-                    ? 'border-black bg-black text-white'
-                    : 'border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white'
+                    ? 'bg-white text-black'
+                    : 'border-white text-white hover:bg-[#555] hover:text-white'
                   }
                 `}
               >
                 12 Pack
               </button>
             </div>
-            <button className="w-full bg-black text-white py-3 rounded font-bold hover:bg-gray-800 transition">
+            <button
+              onClick={handleAddToCart}
+              className="w-full cursor-pointer bg-white text-black py-3 rounded font-bold hover:bg-[#3e3d3d] hover:text-white transition"
+            >
               ADD TO CART
             </button>
           </div>

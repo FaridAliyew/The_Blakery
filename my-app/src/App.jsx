@@ -17,6 +17,7 @@ import BuildAbox from "./pages/BuildAbox";
 import AddToCart from "./pages/AddToCart";
 import CheckOut from "./pages/CheckOut";
 import GoldenCollection from "./pages/GoldenCollection";
+import VarietyPack from "./pages/VarietyPack";
 
 
 function App() {
@@ -49,19 +50,27 @@ function App() {
             <Footer />
           </>
         } />
-        
+
         <Route path="checkOut" element={
           <>
-            <CheckOut/>
-            <Footer/>
+            <CheckOut />
+            <Footer />
           </>
-        }/>
+        } />
 
         <Route path="goldenCollection" element={
           <>
-            <GoldenCollection/>
-            <AnimationThree/>
-            <Footer/>
+            <GoldenCollection />
+            <AnimationThree />
+            <Footer />
+          </>
+        } />
+
+        <Route path="varietyPack" element={
+          <>
+            <VarietyPack />
+            <AnimationThree />
+            <Footer />
           </>
         }/>
 
